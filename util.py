@@ -4,14 +4,12 @@ import matplotlib.pyplot as plt
 
 def plot_data(X, y):
     # find pos points and neg points
-    X = X[:,1:]
+    # X = X[:,1:]
     pos_idx = np.where(y == 1)
     pos_points = X[np.asarray(pos_idx[0])]
 
     neg_idx = np.where(y == 0)
     neg_points = X[np.asarray(neg_idx[0])]
-
-    print(pos_points,neg_points)
 
     plt.scatter(pos_points[:, 0], pos_points[:, 1], marker="+")
     plt.scatter(neg_points[:, 0], neg_points[:, 1], marker=".")
